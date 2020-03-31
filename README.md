@@ -20,13 +20,15 @@ Based on https://github.com/cosmic-byte/flask-restplus-boilerplate.
   - `python manage.py db migrate`
   - `python manage.py db upgrade`
 - Run `python manage.py db run`
-- That's it! 
-- If you want to populate the database with movies:
-  - Create an user
-  - Give it admin status by editing the admin value on `PgAdmin4`
-  - Log in and get the Auth Token
-  - Replace it in the `.env` file
-  - Run `search.py`
+
+That's it! 
+
+If you want to populate the database with movies:
+- Create an user
+- Give it admin status by editing the admin value on `PgAdmin4`
+- Log in and get the Auth Token
+- Replace it in the `.env` file
+- Run `search.py`
 
 
 ## Contributing
