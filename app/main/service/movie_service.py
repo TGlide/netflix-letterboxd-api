@@ -90,7 +90,7 @@ def get_movies_from_letterboxd(owner):
         while True:
             resp = requests.get(f"{list_url}/page/{i}")
             soup = bs(resp.text, 'html.parser')
-            page_movies = [clean_title(m.get('data-film-slug'))
+            page_movies = [m.findChildren('img', recursive=True)[0].get('alt')
                            for m in soup.select(".film-poster")]
             if not page_movies:
                 break
