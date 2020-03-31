@@ -1,9 +1,9 @@
-# Netflix Movies API
+# Netflix Letterboxd API
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
 ## Description
 
-This is an API for storing the catalogue of Netflix Movies. 
+This is an API for storing the catalogue of Netflix Movies and getting movies from Letterboxd Lists
 
 Based on https://github.com/cosmic-byte/flask-restplus-boilerplate.
 
