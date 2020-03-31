@@ -40,3 +40,7 @@ Contributors are welcome! As this is a commitizen friendly repo, please follow t
 - Run `yarn global add commitizen`
 - For every commit, run `git cz` instead of `git commit`
 
+## License
+
+This project is under the GNU General Public License v3.0
+
