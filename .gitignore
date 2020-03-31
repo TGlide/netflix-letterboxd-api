@@ -106,3 +106,4 @@ ENV/
 search.py
 .vscode
 node_modules
+driver
