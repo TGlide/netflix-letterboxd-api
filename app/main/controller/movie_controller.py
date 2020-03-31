@@ -1,4 +1,4 @@
-from ..service.movie_service import save_new_movie, get_all_movies, get_a_movie, delete_a_movie
+from ..service.movie_service import save_new_movie, get_all_movies, get_a_movie, delete_a_movie, get_movies_from_letterboxd
 from ..util.dto import MovieDto
 from ..util.decorator import token_required, admin_token_required
 
@@ -52,3 +52,16 @@ class Movie(Resource):
             api.abort(404)
         else:
             return delete_a_movie(movie)
+
+
+@api.route('/watchlist/<owner>')
+@api.param('owner', 'The watchlist owner usernae')
+class Letterboxd(Resource):
+    @api.doc('get movies from a letterboxd list')
+    def get(self, owner):
+        """get movies from a list given the list owner"""
+        movies = get_movies_from_letterboxd(owner)
+        if not movies:
+            api.abort(404)
+        else:
+            return movies
