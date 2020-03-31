@@ -103,7 +103,6 @@ ENV/
 .mypy_cache/
 /migrations
 
-search.py
 .vscode
 node_modules
 driver
