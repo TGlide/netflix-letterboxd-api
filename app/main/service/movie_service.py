@@ -101,3 +101,24 @@ def get_movies_from_letterboxd(owner):
     except Exception as e:
         print(e)
         return {}, 404
+
+
+def get_movies_from_letterboxd_list(owner, list_name):
+    list_url = f"https://letterboxd.com/{owner}/list/{list_name}/"
+    i = 1
+    movies = []
+    try:
+        while True:
+            resp = requests.get(f"{list_url}/page/{i}")
+            soup = bs(resp.text, 'html.parser')
+            page_movies = [m.findChildren('img', recursive=True)[0].get('alt')
+                           for m in soup.select(".film-poster")]
+            if not page_movies:
+                break
+            movies.extend(page_movies)
+            i += 1
+        response = {'data': {'movies': movies}}
+        return response, 200
+    except Exception as e:
+        print(e)
+        return {}, 404
